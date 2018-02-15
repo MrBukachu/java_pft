@@ -1,4 +1,4 @@
-package io.sandbox;
+package ru.stqa.pft.sandbox;
 
 public class MyFirstProgram {
 
