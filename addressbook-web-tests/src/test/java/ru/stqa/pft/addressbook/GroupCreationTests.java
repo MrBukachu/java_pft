@@ -20,10 +20,7 @@ public class GroupCreationTests {
     System.setProperty("webdriver.gecko.driver", "/Users/denisnikiforov/code/java_pft/addressbook-web-tests/src/test/resources/webdrivers/geckodriver/macos/geckodriver");
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
 
-  @Test
-  public void testUntitledTestCase() throws Exception {
     wd.get("http://addressbook.local:8888/index.php");
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
@@ -32,6 +29,12 @@ public class GroupCreationTests {
     wd.findElement(By.name("pass")).clear();
     wd.findElement(By.name("pass")).sendKeys("secret");
     wd.findElement(By.xpath("//input[@value='Login']")).click();
+
+  }
+
+  @Test
+  public void test_group_creation() throws Exception {
+
     wd.findElement(By.linkText("groups")).click();
     wd.findElement(By.name("new")).click();
     wd.findElement(By.name("group_name")).click();
@@ -50,5 +53,13 @@ public class GroupCreationTests {
     wd.quit();
   }
 
+public static boolean isAlertPresent(FirefoxDriver wd){
+    try{
+      wd.switchTo().alert();
+      return true;
+    }catch (NoAlertPresentException e){
+      return false;
+    }
+}
 
 }
