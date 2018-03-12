@@ -1,7 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
 import org.testng.annotations.Test;
-import ru.stqa.pft.addressbook.model.UserData;
+import ru.stqa.pft.addressbook.model.ContactData;
 
 
 public class UserCreationTests extends TestBase {
@@ -9,14 +9,12 @@ public class UserCreationTests extends TestBase {
 	@Test
 	public void testUserCreation() throws Exception {
 		app.getUserHelper().initNewUser();
-		app.getUserHelper().fillUserForm(new UserData("fname", "mname", "lname", "nname",
+		app.getUserHelper().fillUserForm(new ContactData("fname", "test1", "mname", "lname", "nname", "/Users/denisnikiforov/code/java_pft/addressbook-web-tests/IMG_0008.jpg",
 				"title", "address", "123321", "3211232",
 				"12312", "290348", "email@asda.com", "email2@asd.com", "emal3@ads.com",
 				"https://google.com", "25", "July", "1984", "12", "July",
-				"1984","address 2", "123123", "notes"));
+				"1984", "address 2", "123123", "notes"));
 		app.getUserHelper().submitUserCreation();
 		app.getNavigationHelper().goToHomePage();
 	}
-
-
 }

@@ -5,6 +5,7 @@ public class UserData {
 	private final String middlename;
 	private final String lastname;
 	private final String nickname;
+	private final String photo;
 	private final String title;
 	private final String address;
 	private final String home_phone;
@@ -25,11 +26,12 @@ public class UserData {
 	private final String phone2;
 	private final String notes;
 
-	public UserData(String firstname, String middlename, String lastname, String nickname, String title, String address, String home_phone, String mobile_phone, String work_phone, String fax, String email, String email2, String email3, String homepage, String bday, String bmonth, String byear, String aday, String amonth, String ayar, String address2, String phone2, String notes) {
+	public UserData(String firstname, String middlename, String lastname, String nickname, String photo, String title, String address, String home_phone, String mobile_phone, String work_phone, String fax, String email, String email2, String email3, String homepage, String bday, String bmonth, String byear, String aday, String amonth, String ayar, String address2, String phone2, String notes) {
 		this.firstname = firstname;
 		this.middlename = middlename;
 		this.lastname = lastname;
 		this.nickname = nickname;
+		this.photo = photo;
 		this.title = title;
 		this.address = address;
 		this.home_phone = home_phone;
@@ -65,6 +67,10 @@ public class UserData {
 
 	public String getNickname() {
 		return nickname;
+	}
+
+	public String getPhoto() {
+		return photo;
 	}
 
 	public String getTitle() {
@@ -142,4 +148,5 @@ public class UserData {
 	public String getNotes() {
 		return notes;
 	}
+
 }
