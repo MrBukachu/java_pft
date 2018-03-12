@@ -3,7 +3,7 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-public class GroupModificationTests  extends  TestBase{
+public class GroupModificationTests extends TestBase {
 
 	@Test
 	public void testGroupModification() {
@@ -13,7 +13,6 @@ public class GroupModificationTests  extends  TestBase{
 		app.getGroupHelper().fillGroupForm(new GroupData("123123", "1231", "1231"));
 		app.getGroupHelper().submitGroupModification();
 		app.getGroupHelper().returnToGroupPage();
-
 	}
 
 }
