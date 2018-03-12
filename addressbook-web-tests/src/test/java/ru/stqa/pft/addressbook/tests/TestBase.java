@@ -6,7 +6,7 @@ import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-	protected final ApplicationManager app = new ApplicationManager();
+	protected final ApplicationManager app = new ApplicationManager(org.openqa.selenium.remote.BrowserType.CHROME);
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() throws Exception {
