@@ -1,6 +1,5 @@
 package ru.stqa.pft.sandbox;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -13,3 +12,4 @@ public class SquareTests {
         assertEquals(s.area(), 25.0);
     }
 }
+

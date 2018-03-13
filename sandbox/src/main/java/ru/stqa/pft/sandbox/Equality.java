@@ -16,7 +16,7 @@ public class Equality {
 		String b2 = a1;
 
 
-		// физическое сравнение - bcgjkm[jdfnm yt lkz j,mtrnjd
+		// физическое сравнение
 		System.out.println(String.valueOf(a1 == b2));
 		// логическое сравненеие - испольховать для обьектов
 		System.out.println(String.valueOf(a1.equals(b2)));
