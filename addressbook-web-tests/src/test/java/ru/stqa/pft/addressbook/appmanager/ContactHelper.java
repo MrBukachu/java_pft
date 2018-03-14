@@ -1,10 +1,14 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 public class ContactHelper extends HelperBase {
 
@@ -63,6 +67,8 @@ public class ContactHelper extends HelperBase {
 		type(By.name("notes"), contactData.getNotes());
 	}
 
+
+
 	public void initContactCreation() {
 		click(By.linkText("add new"));
 		click(By.xpath("//input[@name='quickadd']"));
@@ -73,7 +79,28 @@ public class ContactHelper extends HelperBase {
 		click(By.xpath("//td[8]/a/img"));
 	}
 
-	public void selectUser() {
+	public void selectContact() {
 		click(By.xpath("//table[@id='maintable']//tr[@name='entry']//input[@type='checkbox']"));
+	}
+
+	public void createContact(ContactData data) {
+		initContactCreation();
+		fillUserForm(data, true);
+		submitContactCreation();
+	}
+
+	public boolean isThereAContact() {
+		return isElementPresent(By.xpath("//td[8]/a/img"));
+	}
+
+	public void deleteSelectedContact() {
+		click(By.xpath("//*[@id=\"content\"]//div[2]/input"));
+		isAlertPresent();
+
+		WebDriverWait wait = new WebDriverWait(wd, 3000);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alert = wd.switchTo().alert();
+		alert.accept();
+
 	}
 }

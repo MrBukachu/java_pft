@@ -36,7 +36,7 @@ public class ApplicationManager {
 			System.out.printf("Incompitable Browser TYpe");
 		}
 
-		wd.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 		wd.get("http://addressbook.local:8888/index.php");
 		groupHelper = new GroupHelper(wd);
 		navigationHelper = new NavigationHelper(wd);
