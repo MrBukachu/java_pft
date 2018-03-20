@@ -1,12 +1,13 @@
-package ru.stqa.pft.addressbook.tests;
+package ru.stqa.pft.addressbook.tests.contacts;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.tests.groups.TestBase;
 
 import java.util.List;
 
-public class ContacDeletionTests extends TestBase{
+public class ContacDeletionTests extends TestBase {
 
 	@Test(enabled = false)
 	public void test_contact_deletion(){
