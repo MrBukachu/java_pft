@@ -8,7 +8,7 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GroupHelper extends HelperBase{
+public class GroupHelper extends HelperBase {
 
 
 	public GroupHelper(WebDriver wd) {
@@ -49,7 +49,7 @@ public class GroupHelper extends HelperBase{
 		click(By.name("update"));
 	}
 
-	public void createGroup(GroupData group) {
+	public void create(GroupData group) {
 		initGroupCreation();
 		fillGroupForm(group);
 		submitGroupCreation();
@@ -66,14 +66,28 @@ public class GroupHelper extends HelperBase{
 
 	}
 
-	public List<GroupData> getGroupList() {
+	public List<GroupData> list() {
 		List<GroupData> groups = new ArrayList<GroupData>();
-		List<WebElement> elements = wd.findElements(By.name("selected[]"));
-		for (WebElement element : elements){
+		List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
+		for (WebElement element : elements) {
 			String name = element.getText();
-			GroupData group = new GroupData(name, null, null);
-			groups.add(group);
+			int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+			groups.add(new GroupData().withId(id).withName(name));
 		}
 		return groups;
+	}
+
+	public void modify(int index, GroupData group) {
+		selectGroup(index);
+		initGroupModification();
+		fillGroupForm(group);
+		submitGroupModification();
+		returnToGroupPage();
+	}
+
+	public void delete(int index) {
+		selectGroup(index);
+		deleteSelectedGroups();
+		returnToGroupPage();
 	}
 }

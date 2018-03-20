@@ -4,6 +4,12 @@ build/
 out/
 .idea/workspace.xml
 .idea/misc.xml
+.idea/libraries
+.idea/dataSources/
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+
+
 
 # Ignore Gradle GUI config
 gradle-app.setting

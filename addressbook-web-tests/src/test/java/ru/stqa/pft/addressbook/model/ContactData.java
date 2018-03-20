@@ -80,6 +80,37 @@ public class ContactData {
 		return photo;
 	}
 
+	@Override
+	public String toString() {
+		return "ContactData{" +
+				"firstname='" + firstname + '\'' +
+				", group='" + group + '\'' +
+				", middlename='" + middlename + '\'' +
+				", lastname='" + lastname + '\'' +
+				", nickname='" + nickname + '\'' +
+				", photo='" + photo + '\'' +
+				", title='" + title + '\'' +
+				", address='" + address + '\'' +
+				", home_phone='" + home_phone + '\'' +
+				", mobile_phone='" + mobile_phone + '\'' +
+				", work_phone='" + work_phone + '\'' +
+				", fax='" + fax + '\'' +
+				", email='" + email + '\'' +
+				", email2='" + email2 + '\'' +
+				", email3='" + email3 + '\'' +
+				", homepage='" + homepage + '\'' +
+				", bday='" + bday + '\'' +
+				", bmonth='" + bmonth + '\'' +
+				", byear='" + byear + '\'' +
+				", aday='" + aday + '\'' +
+				", amonth='" + amonth + '\'' +
+				", ayar='" + ayar + '\'' +
+				", address2='" + address2 + '\'' +
+				", phone2='" + phone2 + '\'' +
+				", notes='" + notes + '\'' +
+				'}';
+	}
+
 	public String getGroup() {
 		return group;
 	}
